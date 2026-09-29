@@ -1,0 +1,20 @@
+# Guía personal del proyecto (no se sube)
+README.local.md
+
+# Archivos fuente originales (las copias usadas están en src/assets y public)
+lottiefiles/
+/logotipo.png
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+.vercel
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea

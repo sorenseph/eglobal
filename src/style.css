@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply min-h-screen bg-canvas font-sans text-ink;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200/70 bg-white shadow-card;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-ink-800 focus-visible:ring-slate-300 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-brand-200 bg-brand-50 text-brand-600 hover:border-brand-600 hover:bg-brand-100 focus-visible:ring-brand-100;
+  }
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-canvas-200 hover:text-ink focus-visible:ring-slate-200;
+  }
+
+  .form-label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-600;
+  }
+  .form-input {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-400 transition focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+  .form-input.has-error {
+    @apply border-rose-400 focus:border-rose-500 focus:ring-rose-100;
+  }
+  .form-error {
+    @apply mt-1.5 text-xs font-medium text-rose-600;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+}
+
+/* Toasts con estilo corporativo */
+.Vue-Toastification__toast {
+  @apply rounded-2xl font-sans shadow-float;
+  min-height: 56px;
+}
+.Vue-Toastification__toast--success {
+  background-color: #121212;
+}
+.Vue-Toastification__toast--info {
+  background-color: #0066cc;
+}
+.Vue-Toastification__toast--error {
+  background-color: #e11d48;
+}
+.Vue-Toastification__toast--warning {
+  background-color: #f59e0b;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable,
+  .printable * {
+    visibility: visible;
+  }
+  .printable {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+}
