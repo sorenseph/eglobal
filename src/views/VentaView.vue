@@ -2,7 +2,6 @@
 import { computed, reactive, ref } from 'vue'
 import { useToast } from 'vue-toastification'
 import { CalendarDays, CreditCard, DollarSign, Loader2, LockKeyhole, ShieldCheck, UserRound } from 'lucide-vue-next'
-import CreditCardPreview from '@/components/CreditCardPreview.vue'
 import FormField from '@/components/FormField.vue'
 import LottieAnimation from '@/components/LottieAnimation.vue'
 import PageHeader from '@/components/PageHeader.vue'
@@ -234,17 +233,13 @@ function closeVoucher() {
         </p>
       </form>
 
-      <aside class="flex flex-col items-center gap-6">
-        <div class="card flex w-full flex-col items-center p-6">
-          <div class="w-full max-w-xs">
-            <LottieAnimation :animation="checkoutAnimation" />
-          </div>
-          <CreditCardPreview
-            class="mt-4"
-            :number="form.numeroTarjeta"
-            :name="form.nombrePersona"
-            :expiry="form.fechaExpiracion"
-          />
+      <aside class="card flex flex-col items-center justify-center p-6">
+        <div class="w-full max-w-sm">
+          <LottieAnimation :animation="checkoutAnimation" />
+        </div>
+        <div class="mt-2 text-center">
+          <h3 class="font-semibold">Cobro rápido</h3>
+          <p class="mt-1 text-sm text-ink-600">Al aprobarse la venta se genera el comprobante con su número de aprobación.</p>
         </div>
       </aside>
     </div>
